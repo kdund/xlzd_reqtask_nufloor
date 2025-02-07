@@ -1,11 +1,22 @@
 # xlzd_reqtask_nufloor
-XLZD science requirements task force code
+Repository for the Requirements Taskforce neutrino fog work (2025)
 
-Contents: 
+Group Members: 
+ * Dan Tovey
+ * Robert James
+ * Maike Doerenkamp
+ * Knut Morå
 
-xlzd_model_unconstrained_nu.yaml : alea configfor an unbinned likelihood with neutrino-sources, and no constraint on the
-atmospheric nu component 
+## Contents: 
 
-run_atmnu_sensi simple script to run the alea sensitivity code
+  * template_generation # Folder containing scripts to generate expected observable distributions
+  * data #to store spectra, templates (<10-ish Mb)
+  * likelihoods #store likelihood configurations of all runs
+  * run_configurations #store run configurations of the statistics runs
+  * results #store (abbreviated) run results here
 
-XLZD_generate_templates.ipynb notebook to use flamedisx functionality to create template files for the nu sources. 
+
+## Run versions
+Each likelihood, run config and results should be associated with a version name to allow easier organisation, listed below
+  * k0.0: A very simplified ER+nu+WIMP likelihood using templates from Rob
+
