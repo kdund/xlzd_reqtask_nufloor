@@ -32,8 +32,8 @@ def generate_wimp_template(fname = "deleteme.h5",
         cs2_bins = np.linspace(2.8, 3.7, 101)
         detector_configuration = dict(
         configuration_name = "60t",
-        drift_field_v_cm = 80,
-        gas_field_kV_cm = 7.5,
+        drift_field_v_cm = 25,
+        gas_field_kV_cm = 6,
         elife_ns = 10e6,
         g1 = 0.27,
         )
