@@ -21,16 +21,6 @@ parameter_definition:
     fittable: false
     description: WIMP mass in GeV/c^2
 
-  detector_location:
-    nominal_value: SURF
-    fittable: false
-    description: string denoting detector location (LNGS/SURF) for CEvNS rate
-
-  detector_performance:
-    nominal_value: good
-    fittable: false
-    description: string denoting detector field performance (good, bad)
-
 
   # NR bkg:
 
@@ -126,7 +116,7 @@ likelihood_config:
       #likelihood_type: blueice.likelihood.BinnedLogLikelihood
       analysis_space:
         - cs1: np.linspace(5, 100, 101)
-        - log10_cs2: np.linspace(3.1,4.1, 101)
+        - log10_cs2: np.linspace(2.8,3.7, 101)
       in_events_per_bin: true
       livetime_parameter: livetime
       slice_args: {}
@@ -141,7 +131,7 @@ likelihood_config:
         named_parameters:
           - wimp_mass
           - detector_performance
-        template_filename: pdfs_wimp_60t_r0.2_{detector_performance:s}.h5
+        template_filename: pdfs_wimp_60t_r0.2_bad.h5
         histogram_scale_factor: 1.
 
       # NR backgrounds 
@@ -153,7 +143,7 @@ likelihood_config:
       #  histogram_scale_factor: 1.
 
       - name: CEvNS_other
-        histname: CEvNS_other_{detector_location:s}
+        histname: CEvNS_other_SURF
         parameters:
           - CEvNS_other_rate_multiplier
           - detector_location
@@ -161,7 +151,7 @@ likelihood_config:
         named_parameters: 
           - detector_location
           - detector_performance
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_bad.h5
         histogram_scale_factor: 1.
       
       # ER backgrounds 
@@ -173,7 +163,7 @@ likelihood_config:
           - detector_performance
         named_parameters: 
           - detector_performance
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_bad.h5
         histogram_scale_factor: 1.
 
       - name: Xe136
@@ -183,7 +173,7 @@ likelihood_config:
           - detector_performance
         named_parameters: 
           - detector_performance
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_bad.h5
         histogram_scale_factor: 1.
 
       - name: Xe124
@@ -193,7 +183,7 @@ likelihood_config:
           - detector_performance
         named_parameters: 
           - detector_performance
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_bad.h5
         histogram_scale_factor: 1.
 
       - name: Pb214
@@ -203,7 +193,7 @@ likelihood_config:
           - detector_performance
         named_parameters: 
           - detector_performance
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_bad.h5
         histogram_scale_factor: 1.
 
       - name: Kr85
@@ -213,7 +203,7 @@ likelihood_config:
           - detector_performance
         named_parameters: 
           - detector_performance
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_bad.h5
         histogram_scale_factor: 1.
 
 
