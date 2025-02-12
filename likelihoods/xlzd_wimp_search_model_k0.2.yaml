@@ -117,7 +117,7 @@ parameter_definition:
 
 likelihood_config:
   likelihood_weights: [1]
-  template_folder: /Users/kdund/Desktop/xlzd_reqtask_nufloor/data/ # will try to find the templates in alea
+  template_folder: /global/homes/k/kdund/xlzd/xlzd_reqtask_nufloor/data/ # will try to find the templates in alea
   likelihood_terms:
     # SR0
     - name: sr0
