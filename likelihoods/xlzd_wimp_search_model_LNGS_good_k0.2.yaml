@@ -14,6 +14,9 @@ parameter_definition:
     fit_limits:
       - 0
       - null
+    parameter_interval_bounds: 
+      - 0 
+      - null
     fit_guess: 0.001
 
   wimp_mass:
@@ -127,10 +130,8 @@ likelihood_config:
         parameters:
           - wimp_mass
           - WIMP_rate_multiplier
-          - detector_performance
         named_parameters:
           - wimp_mass
-          - detector_performance
         template_filename: pdfs_wimp_60t_r0.2_good.h5
         histogram_scale_factor: 1.
 
@@ -146,11 +147,6 @@ likelihood_config:
         histname: CEvNS_other_LNGS
         parameters:
           - CEvNS_other_rate_multiplier
-          - detector_location
-          - detector_performance
-        named_parameters: 
-          - detector_location
-          - detector_performance
         template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
         histogram_scale_factor: 1.
       
@@ -160,9 +156,6 @@ likelihood_config:
         histname: SolarER
         parameters:
           - SolarER_rate_multiplier
-          - detector_performance
-        named_parameters: 
-          - detector_performance
         template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
         histogram_scale_factor: 1.
 
@@ -170,9 +163,6 @@ likelihood_config:
         histname: Xe136
         parameters:
           - Xe136_rate_multiplier
-          - detector_performance
-        named_parameters: 
-          - detector_performance
         template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
         histogram_scale_factor: 1.
 
@@ -180,9 +170,6 @@ likelihood_config:
         histname: Xe124
         parameters:
           - Xe136_rate_multiplier
-          - detector_performance
-        named_parameters: 
-          - detector_performance
         template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
         histogram_scale_factor: 1.
 
@@ -190,9 +177,6 @@ likelihood_config:
         histname: Pb214_low_LNGS
         parameters:
           - Pb214_rate_multiplier
-          - detector_performance
-        named_parameters: 
-          - detector_performance
         template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
         histogram_scale_factor: 1.
 
@@ -200,9 +184,6 @@ likelihood_config:
         histname: Kr85_low_LNGS
         parameters:
           - Kr85_rate_multiplier
-          - detector_performance
-        named_parameters: 
-          - detector_performance
         template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
         histogram_scale_factor: 1.
 
