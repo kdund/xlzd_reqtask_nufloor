@@ -24,7 +24,7 @@ parameter_definition:
   detector_location:
     nominal_value: SURF
     fittable: false
-    description: string denoting detector location
+    description: string denoting detector location (LNGS/SURF) for CEvNS rate
 
   detector_performance:
     nominal_value: good
