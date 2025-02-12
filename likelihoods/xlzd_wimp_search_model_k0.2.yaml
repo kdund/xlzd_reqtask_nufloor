@@ -21,6 +21,17 @@ parameter_definition:
     fittable: false
     description: WIMP mass in GeV/c^2
 
+  detector_location:
+    nominal_value: SURF
+    fittable: false
+    description: string denoting detector location
+
+  detector_performance:
+    nominal_value: good
+    fittable: false
+    description: string denoting detector field performance (good, bad)
+
+
   # NR bkg:
 
   #CEvNS_solar_rate_multiplier:
@@ -126,9 +137,11 @@ likelihood_config:
         parameters:
           - wimp_mass
           - WIMP_rate_multiplier
+          - detector_performance
         named_parameters:
           - wimp_mass
-        template_filename: pdfs_wimp_60t_r0.2_good.h5
+          - detector_performance
+        template_filename: pdfs_wimp_60t_r0.2_{detector_performance:s}.h5
         histogram_scale_factor: 1.
 
       # NR backgrounds 
@@ -140,10 +153,15 @@ likelihood_config:
       #  histogram_scale_factor: 1.
 
       - name: CEvNS_other
-        histname: CEvNS_other_SURF
+        histname: CEvNS_other_{detector_location:s}
         parameters:
           - CEvNS_other_rate_multiplier
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
+          - detector_location
+          - detector_performance
+        named_parameters: 
+          - detector_location
+          - detector_performance
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
         histogram_scale_factor: 1.
       
       # ER backgrounds 
@@ -152,35 +170,50 @@ likelihood_config:
         histname: SolarER
         parameters:
           - SolarER_rate_multiplier
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
+          - detector_performance
+        named_parameters: 
+          - detector_performance
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
         histogram_scale_factor: 1.
 
       - name: Xe136
         histname: Xe136
         parameters:
           - Xe136_rate_multiplier
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
+          - detector_performance
+        named_parameters: 
+          - detector_performance
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
         histogram_scale_factor: 1.
 
       - name: Xe124
         histname: Xe124
         parameters:
           - Xe136_rate_multiplier
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
+          - detector_performance
+        named_parameters: 
+          - detector_performance
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
         histogram_scale_factor: 1.
 
       - name: Pb214
         histname: Pb214_low_LNGS
         parameters:
           - Pb214_rate_multiplier
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
+          - detector_performance
+        named_parameters: 
+          - detector_performance
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
         histogram_scale_factor: 1.
 
       - name: Kr85
         histname: Kr85_low_LNGS
         parameters:
           - Kr85_rate_multiplier
-        template_filename: pdfs_CEvNS_disco_60t_r0.2_good.h5
+          - detector_performance
+        named_parameters: 
+          - detector_performance
+        template_filename: pdfs_CEvNS_disco_60t_r0.2_{detector_performance:s}.h5
         histogram_scale_factor: 1.
 
 
